@@ -1,0 +1,18 @@
+@mixin prefixer($property, $value, $prefixes:()) {
+  @each $prefix in $prefixes {
+    #{"-" + $prefix + "-" + $property}: $value;
+  }
+  #{$property}: $value;
+}
+
+@mixin minMedia($minWidth) {
+  @media (min-width: $minWidth#{px}) {
+    @content;
+  }
+}
+
+@mixin maxMedia($maxWidth) {
+  @media (max-width: $maxWidth#{px}) {
+    @content;
+  }
+}

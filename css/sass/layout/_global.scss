@@ -1,0 +1,50 @@
+* {
+  @include prefixer(box-sizing, border-box, webkit moz ms o);
+}
+
+body {
+  font: {
+    size: $Fontsize;
+    family: $fontFamily;
+    weight: 700;
+    color: $VeryDarkBlue;
+  }
+}
+
+.button-dark {
+  background-image: $toggle !important;
+}
+
+.body-dark {
+  background-color: $Dark;
+  color: $white;
+}
+
+.header-dark {
+  background-color: $veryDark !important;
+  .span {
+    color: $desaturated !important;
+  }
+}
+
+.text-dark {
+  color: $white !important;
+}
+
+.dark-h2 {
+  color: $white !important;
+}
+
+.card-dark {
+  background-color: $darkDesaturated !important;
+  transition: .2s;
+  &:hover {
+    background-color: lighten($color: $darkDesaturated, $amount: 6px) !important;
+  }
+  .fs {
+    color: $desaturated !important;
+  }
+  .page {
+    color: $desaturated !important;
+  }
+}

@@ -1,0 +1,15 @@
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  @include minMedia(768) {
+    width: 750px;
+  }
+  @include minMedia(991) {
+    width: 970px;
+  }
+  @include minMedia(1200) {
+    width: 1170px;
+  }
+}

@@ -1,0 +1,51 @@
+.header {
+  background-color: $VeryPaleBlue;
+  padding-top: $padding - 60px;
+  padding-bottom: $padding + 80px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      h1 {
+        margin-bottom: 5px;
+      }
+      span {
+        color: $DarkGrayishBlue;
+      }
+    }
+    p {
+      margin-left: auto;
+      color: $DarkGrayishBlue;
+    }
+    .button {
+      border-radius: 50px;
+      width: 60px;
+      height: 30px;
+      background-color: $toggleLight;
+      position: relative;
+      margin-left: 15px;
+      &:hover {
+        background-image: $toggle;
+      }
+      .slider {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 50%;
+        right: 3px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: $VeryPaleBlue;
+        @include prefixer(transition, .2s, webkit moz ms o);
+      }
+      .checkbox {
+        appearance: none;
+        &:checked + .slider {
+          right: 33px;
+          background-color: $Dark;
+        }
+      }
+    }
+  }
+}
