@@ -56,8 +56,8 @@ body {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 20px;
+  padding-left: 20px; }
   @media (min-width: 768px) {
     .container {
       width: 750px; } }
@@ -76,41 +76,60 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    @media (max-width: 767px) {
+      .header .container {
+        flex-direction: column; } }
     .header .container .text h1 {
       margin-bottom: 5px; }
     .header .container .text span {
       color: #63687e; }
-    .header .container p {
-      margin-left: auto;
-      color: #63687e; }
-    .header .container .button {
-      border-radius: 50px;
-      width: 60px;
-      height: 30px;
-      background-color: #aeb3cb;
-      position: relative;
-      margin-left: 15px; }
-      .header .container .button:hover {
-        background-image: linear-gradient(to right, #378fe6, #3eda82); }
-      .header .container .button .slider {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 50%;
-        right: 3px;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        background-color: #f5f7ff;
-        -webkit-transition: 0.2s;
-        -moz-transition: 0.2s;
-        -ms-transition: 0.2s;
-        -o-transition: 0.2s;
-        transition: 0.2s; }
-      .header .container .button .checkbox {
-        appearance: none; }
-        .header .container .button .checkbox:checked + .slider {
-          right: 33px;
-          background-color: #1e202a; }
+    .header .container .parent {
+      display: flex;
+      align-items: center; }
+      @media (max-width: 767px) {
+        .header .container .parent {
+          margin-top: 40px;
+          position: relative;
+          width: 100%; }
+          .header .container .parent::after {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: .5px;
+            background-color: #252a41; } }
+      .header .container .parent .para {
+        margin: 0 15px 0 0; }
+      .header .container .parent .button {
+        display: block;
+        border-radius: 50px;
+        width: 60px;
+        height: 30px;
+        background-color: #aeb3cb;
+        position: relative;
+        margin-left: auto; }
+        .header .container .parent .button:hover {
+          background-image: linear-gradient(to right, #378fe6, #3eda82); }
+        .header .container .parent .button .slider {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 50%;
+          right: 3px;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          background-color: #f5f7ff;
+          -webkit-transition: 0.2s;
+          -moz-transition: 0.2s;
+          -ms-transition: 0.2s;
+          -o-transition: 0.2s;
+          transition: 0.2s; }
+        .header .container .parent .button .checkbox {
+          appearance: none; }
+          .header .container .parent .button .checkbox:checked + .slider {
+            right: 33px;
+            background-color: #1e202a; }
 
 .social .container {
   display: grid;
@@ -127,7 +146,8 @@ body {
     padding: 30px 0;
     border-top: 5px solid #198ff5;
     border-radius: 6px;
-    overflow: hidden; }
+    overflow: hidden;
+    transition: .2s; }
     .social .container .box:hover {
       background-color: #e0e2f0; }
     .social .container .box:nth-child(2) {
@@ -179,11 +199,13 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px; }
     .stats .container .box {
+      transition: .2s;
       background-color: #f0f2fa;
       padding: 20px;
       display: flex;
       flex-direction: column;
-      justify-content: center; }
+      justify-content: center;
+      border-radius: 6px; }
       .stats .container .box:hover {
         background-color: #e0e2f0; }
       .stats .container .box .page {

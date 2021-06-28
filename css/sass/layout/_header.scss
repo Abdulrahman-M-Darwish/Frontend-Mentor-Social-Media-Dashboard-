@@ -6,6 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include maxMedia(767) {
+      flex-direction: column;
+    }
     .text {
       h1 {
         margin-bottom: 5px;
@@ -14,36 +17,54 @@
         color: $DarkGrayishBlue;
       }
     }
-    p {
-      margin-left: auto;
-      color: $DarkGrayishBlue;
-    }
-    .button {
-      border-radius: 50px;
-      width: 60px;
-      height: 30px;
-      background-color: $toggleLight;
-      position: relative;
-      margin-left: 15px;
-      &:hover {
-        background-image: $toggle;
+    .parent {
+      display: flex;
+      align-items: center;
+      @include maxMedia(767) {
+        margin-top: 40px;
+        position: relative;
+        width: 100%;
+        &::after {
+          content: "";
+          position: absolute;
+          top: -20px;
+          left: 0;
+          width: 100%;
+          height: .5px;
+          background-color: $darkDesaturated;
+        }
       }
-      .slider {
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top: 50%;
-        right: 3px;
-        transform: translateY(-50%);
-        border-radius: 50%;
-        background-color: $VeryPaleBlue;
-        @include prefixer(transition, .2s, webkit moz ms o);
+      .para {
+        margin: 0 15px 0 0;
       }
-      .checkbox {
-        appearance: none;
-        &:checked + .slider {
-          right: 33px;
-          background-color: $Dark;
+      .button {
+        display: block;
+        border-radius: 50px;
+        width: 60px;
+        height: 30px;
+        background-color: $toggleLight;
+        position: relative;
+        margin-left: auto;
+        &:hover {
+          background-image: $toggle;
+        }
+        .slider {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          top: 50%;
+          right: 3px;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          background-color: $VeryPaleBlue;
+          @include prefixer(transition, .2s, webkit moz ms o);
+        }
+        .checkbox {
+          appearance: none;
+          &:checked + .slider {
+            right: 33px;
+            background-color: $Dark;
+          }
         }
       }
     }
